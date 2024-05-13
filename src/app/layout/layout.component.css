@@ -1,0 +1,13 @@
+.sidebar-wrapper {
+  background-color: #111827;
+  height: 100vh;
+}
+
+.sidebar-container {
+  background-color: #111827;
+  /* background-color: white; */
+}
+
+.hide-sidebar{
+  display: none !important;
+}

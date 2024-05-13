@@ -1,0 +1,31 @@
+<div class="topbar-wrppar">
+  <div
+    style="display: flex; align-items: flex-end; justify-content: center"
+    class="breadcrumbs"
+  >
+    <mat-icon>home</mat-icon>
+    <div class="separator"></div>
+    <div class="breadcrumb">
+      <span> Dashboard /</span>
+      <span>&nbsp;Overview </span>
+    </div>
+  </div>
+
+  <div [matMenuTriggerFor]="beforeMenu" class="user-profile">
+    <div class="user-info">
+      <div class="user-name pointer">Henry Smith</div>
+      <div class="user-role pointer">Lending Manager</div>
+
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    </div>
+
+    <img
+      src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
+      alt="avatar"
+      class="avatar"
+    />
+  </div>
+</div>

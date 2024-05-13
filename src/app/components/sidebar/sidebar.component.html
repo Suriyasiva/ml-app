@@ -1,0 +1,41 @@
+<div>
+  <div class="app-name-container">
+    <div style="display: flex; justify-content: center; align-items: center">
+      <img
+        alt="admin logo"
+        class="brand-logo"
+        src="https://modernadmin.evolvision.com/assets/custom/images/logo.png"
+      />
+      <div class="app-name">Modern</div>
+    </div>
+    <mat-icon (click)="handleMinimize()" class="side-bar-minimize"
+      >all_out</mat-icon
+    >
+  </div>
+
+  <div style="height: 20px"></div>
+
+  <div class="sidebar-container" *ngFor="let menuItem of menuItems">
+    <div
+      [ngClass]="
+        selectedNavItem == menuItem.name
+          ? 'nav-indicator'
+          : 'nav-hide-indicator'
+      "
+    ></div>
+    <mat-icon
+      [ngClass]="
+        selectedNavItem == menuItem.name ? 'nav-icon' : 'unselectedIcon'
+      "
+      >{{ menuItem.icon }}</mat-icon
+    >
+    <p
+      (click)="handleNavItemClick(menuItem)"
+      [routerLink]="menuItem.path"
+      style="margin: 0px"
+      class="menu-item"
+    >
+      {{ menuItem.title }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div
+  style="height: 100vh; display: flex; flex-direction: column"
+  class="container-fluid"
+>
+  <div class="row" style="flex: 1">
+    <div [ngClass]="showSideBar ? 'col-2 sidebar-container' : 'hide-sidebar'">
+      <app-sidebar [handleMinimize]="handleMinimize"></app-sidebar>
+    </div>
+    <div
+      style="overflow: auto; max-height: 100vh"
+      class="col-10 position-relative"
+    >
+      <div>
+        <div class="col-12">
+          <app-top-bar></app-top-bar>
+        </div>
+      </div>
+      <router-outlet />
+    </div>
+  </div>
+</div>

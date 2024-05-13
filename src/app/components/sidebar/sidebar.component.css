@@ -1,0 +1,68 @@
+
+
+.app-name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0 18px 11px;
+}
+
+.brand-logo {
+  width: 36px;
+}
+
+.app-name {
+  font-size: 1.5rem;
+  padding-left: 11px;
+  color: white;
+  font-weight: 700px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sidebar-container {
+  display: flex;
+  height: 50px;
+  padding-left: 11px;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-item {
+  color: #d1d5db !important;
+  font-size: 0.875rem;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  color: #4f46e5 !important;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-indicator {
+  background-color: #4f46e5;
+  width: 4px;
+  height: 23px;
+  border-radius: 3px;
+  transition: all 0.4s ease-in;
+}
+
+.nav-hide-indicator {
+  width: 4px;
+  height: 23px;
+  border-radius: 3px;
+}
+
+.nav-icon {
+  color: #4f46e5;
+}
+
+.unselectedIcon {
+  color: #a5b4fccc;
+}
+
+.side-bar-minimize {
+  color: white;
+  cursor: pointer;
+}

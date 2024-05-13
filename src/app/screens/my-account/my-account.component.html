@@ -1,0 +1,398 @@
+<div class="container-fluid">
+  <!-- page heading and save buttons -->
+  <div class="row">
+    <!--  page info -->
+    <div class="col-6 mt-3 px-0 page-info">
+      <h1>My Account</h1>
+      <p>Access and oversee your profile from this section.</p>
+    </div>
+
+    <div class="col-6"></div>
+  </div>
+
+  <!-- page - content -->
+  <div style="padding-left: 0.8rem" class="row py-2">
+    <div class="col-12 card-panel d-flex align-items-start g-10">
+      <div>
+        <div class="general-tab-container">
+          <mat-icon style="color: #4f46e5">info</mat-icon>
+          <p style="margin: 0">General Information</p>
+        </div>
+
+        <div class="profile-nav mt-4 py-2 d-flex flex-column mb-1 gap-4">
+          <div style="gap: 0.95rem" class="d-flex align-items-center pointer">
+            <mat-icon
+              [ngStyle]="{
+                color: selectedInfo === 'basicInfo' ? '#4f46e5' : '#a7a7a7'
+              }"
+              >account_circle</mat-icon
+            >
+            <p
+              class="p-0 m-0"
+              [ngClass]="
+                selectedInfo === 'basicInfo' ? 'boldStyle' : 'normalStyle'
+              "
+              (click)="handleInfoSelect('basicInfo')"
+            >
+              Basic Info
+            </p>
+          </div>
+
+          <div style="gap: 0.95rem" class="d-flex align-items-center pointer">
+            <mat-icon
+              [ngStyle]="{
+                color: selectedInfo === 'contactNumber' ? '#4f46e5' : '#a7a7a7'
+              }"
+              >phone</mat-icon
+            >
+            <p
+              class="p-0 m-0"
+              [ngClass]="
+                selectedInfo === 'contactNumber' ? 'boldStyle' : 'normalStyle'
+              "
+              (click)="handleInfoSelect('contactNumber')"
+            >
+              Contact Numbers
+            </p>
+          </div>
+
+          <div style="gap: 0.95rem" class="d-flex align-items-center pointer">
+            <mat-icon
+              [ngStyle]="{
+                color: selectedInfo === 'address' ? '#4f46e5' : '#a7a7a7'
+              }"
+              >home</mat-icon
+            >
+            <p
+              class="p-0 m-0"
+              [ngClass]="
+                selectedInfo === 'address' ? 'boldStyle' : 'normalStyle'
+              "
+              (click)="handleInfoSelect('address')"
+            >
+              Address
+            </p>
+          </div>
+
+          <div
+            style="gap: 0.95rem; padding-left: 4px"
+            class="d-flex align-items-center pointer"
+          >
+            <i
+              [ngStyle]="{
+                color: selectedInfo === 'identity' ? '#4f46e5' : '#a7a7a7'
+              }"
+              style="font-size: 20px"
+              class="material-icons"
+              >co_present</i
+            >
+
+            <p
+              class="p-0 m-0"
+              [ngClass]="
+                selectedInfo === 'identity' ? 'boldStyle' : 'normalStyle'
+              "
+              (click)="handleInfoSelect('identity')"
+            >
+              Identity
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="separator"></div>
+
+      <div style="width: 80%; padding-bottom: 30px" class="px-5">
+        <!--  header -->
+        <div>
+          <div class="d-flex flex-column">
+            <div class="page-info">
+              <h1 class="mb-0">General Information</h1>
+              <p>Oversee your profile</p>
+            </div>
+
+            <div class="separator-v"></div>
+          </div>
+
+          <!-- profile picture handle with if condition -->
+          <form [formGroup]="profileForm" (submit)="handleSubmit($event)">
+            <ng-template [ngIf]="selectedInfo === 'basicInfo'">
+              <div>
+                <div style="font-weight: 500; padding-top: 1.5rem">
+                  Profile picture update
+                </div>
+
+                <div class="d-flex gap-3 pt-3 align-items-end">
+                  <img
+                    src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
+                    alt="avatar"
+                    class="avatar"
+                  />
+
+                  <div class="d-flex flex-column">
+                    <h3 class="m-0">Henry Smith</h3>
+                    <div class="d-flex align-items-center gap-2">
+                      <mat-icon class="text-success">verified_user</mat-icon>
+                      <div>Active</div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-end gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-light general-tab-container"
+                    >
+                      Upload New Photo
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-light d-flex general-tab-container"
+                    >
+                      <mat-icon>delete_outline</mat-icon>
+                      Delete
+                    </button>
+                  </div>
+                </div>
+                <!--  form -->
+                <!--  user profile -->
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter First Name"
+                      formControlName="firstName"
+                      label="First Name"
+                    />
+                  </div>
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter Last Name"
+                      formControlName="lastName"
+                      label="Last Name"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter Email"
+                      type="email"
+                      formControlName="email"
+                      label="Email"
+                    />
+                  </div>
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter DOB"
+                      type="date"
+                      formControlName="dob"
+                      label="DOB"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div style="padding-top: 2rem" class="input-label">
+                    Gender
+                  </div>
+
+                  <div class="d-flex gap-5">
+                    <div
+                      class="gender-card d-flex flex-column justify-content-between align-items-center"
+                      style="width: fit-content"
+                    >
+                      <i style="font-size: 2.5rem" class="material-icons"
+                        >male</i
+                      >
+                      <p>Male</p>
+
+                      <div class="input-group justify-content-center">
+                        <div class="input-group-prepend">
+                          <input
+                            type="radio"
+                            name="gender"
+                            id="male"
+                            checked="true"
+                            value="male"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="gender-card d-flex flex-column justify-content-center align-items-center"
+                      style="width: fit-content"
+                    >
+                      <i style="font-size: 2.5rem" class="material-icons"
+                        >female</i
+                      >
+                      <p>Female</p>
+                      <div class="input-group justify-content-center">
+                        <div class="input-group-prepend">
+                          <input
+                            name="gender"
+                            id="female"
+                            value="female"
+                            type="radio"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+
+            <ng-template [ngIf]="selectedInfo === 'address'">
+              <div>
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter AddressLine 1"
+                      formControlName="addressLine1"
+                      label="AddressLine 1"
+                    />
+                  </div>
+
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter AddressLine 2 (optional)"
+                      formControlName="addressLine2"
+                      label="AddressLine 2"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter City"
+                      formControlName="city"
+                      label="City"
+                    />
+                  </div>
+
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter District"
+                      formControlName="district"
+                      label="District"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter First Name"
+                      formControlName="state"
+                      label="State"
+                    />
+                  </div>
+
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter Pincode"
+                      formControlName="pincode"
+                      label="Pincode"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+
+            <ng-template [ngIf]="selectedInfo === 'identity'">
+              <div>
+                <!--  user profile -->
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter Aadhaar Number"
+                      formControlName="aadhaarNumber"
+                      label="Aadhaar Number"
+                    />
+                  </div>
+
+                  <div>
+                    <app-ml-input
+                      placeholder="Enter Pan Number"
+                      formControlName="panNumber"
+                      label="Pan Number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <!--  user profile -->
+                <div class="d-flex gap-4" style="padding-top: 2rem">
+                  <div>
+                    <div>Aadhaar</div>
+                    <img
+                      src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
+                      class="card-img-top"
+                    />
+                  </div>
+
+                  <div>
+                    <div>Pan</div>
+                    <img
+                      src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
+                      class="card-img-top"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+
+            <ng-template [ngIf]="selectedInfo === 'contactNumber'">
+              <div
+                formArrayName="phoneNumber"
+                class="d-flex gap-4 flex-wrap"
+                style="padding-top: 2rem"
+              >
+                <div
+                  *ngFor="
+                    let userPhoneNumber of userPhoneNumbers;
+                    let i = index
+                  "
+                >
+                  <div style="position: relative" [formGroupName]="i">
+                    <i
+                      (click)="removeUserPhoneNumber($event, i)"
+                      style="position: absolute; right: 0; cursor: pointer"
+                      class="material-icons"
+                      >cancel</i
+                    >
+                    <app-ml-input
+                      placeholder="Enter Phone Number"
+                      formControlName="phoneNumber"
+                      label="Phone Number"
+                      type="number"
+                    />
+                    <div
+                      class="d-flex align-items-center justify-content-between mt-2"
+                    >
+                      <p class="m-0">Primary Contact</p>
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        formControlName="isPrimary"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                (click)="addUserPhoneNumber()"
+                class="btn btn-light general-tab-container mt-3"
+              >
+                Add Contact Number
+              </button>
+            </ng-template>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

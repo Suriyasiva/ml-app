@@ -1,0 +1,48 @@
+.input-field {
+  font-size: 18px;
+  font-weight: 370;
+  color: black;
+  height: 3rem;
+  letter-spacing: 1px;
+  background-color: #dedede50;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 330px;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+}
+
+.input-field:focus {
+  outline: none !important;
+  /* border-color: #719ECE; */
+  border-color: #111827;
+}
+
+.input-field:hover {
+  outline: none !important;
+  border-color: #111827;
+}
+
+.input-label {
+  padding-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111827;
+}
+
+.input-field::placeholder {
+  color: #a7a7a7;
+}
+
+.input-field[type="number"]::-webkit-inner-spin-button,
+.input-field[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+::ng-deep .mdc-notched-outline > * {
+  border-color: green !important;
+  border-top-right-radius: 10px !important;
+}

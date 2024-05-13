@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+https://demos.creative-tim.com/black-dashboard-angular/#/dashboard
+
+https://vex.visurel.com/
+
+https://dribbble.com/shots/21020557-Shown-AI-Create-a-new-ad-campaign  - table
+
+https://dribbble.com/shots/23946207-Customer-Table-SaaS  - table
+
+https://dribbble.com/shots/23331617-Input-field-components-idea-for-mobile-app
+
+https://www.pinterest.com/pin/124623114681049833/visual-search/?x=16&y=16&w=532&h=373&cropSource=6&surfaceType=flashlight
+
+https://jossef.github.io/material-design-icons-iconfont/
+
+https://stackoverflow.com/questions/56979532/angular-reactive-forms-best-way-to-implement-input-components-wrappers 
+
+https://ritchiejacobs.be/angular-custom-form-component
+
+https://stackoverflow.com/questions/53099559/passing-a-formcontrol-to-a-child-component-no-value-accessor-for-form-control
+

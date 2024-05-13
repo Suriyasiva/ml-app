@@ -1,18 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AuthComponent } from '../auth/auth.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { LayoutModule } from './layout/layout.module';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    AuthComponent,
+  ], // use inside this module 
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    LayoutModule,
+    CommonModule,
+    NgbModule,
+    MatIconModule,
+  ], // packages, inbuilt modules
+  providers: [
+    provideAnimationsAsync()
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

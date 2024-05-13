@@ -1,0 +1,70 @@
+.topbar-wrppar {
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 50px;
+}
+
+.avatar {
+  position: relative;
+  bottom: 2px;
+  display: inline-block;
+  width: 3.50rem;
+  white-space: nowrap;
+  border-radius: 1000px;
+  vertical-align: bottom;
+}
+
+.breadcrumbs {
+  color: rebeccapurple;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.user-role {
+  font-size: 10px;
+  color: gray;
+  font-weight: 500;
+}
+
+.separator{
+  width: 3px;
+  height: 1.3rem;
+  border-radius: 100px;
+  background-color: gray;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.breadcrumb{
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 !important;
+}
+
+::ng-deep .cdk-overlay-container .flag-menu {
+  margin-top: 3rem;
+}
