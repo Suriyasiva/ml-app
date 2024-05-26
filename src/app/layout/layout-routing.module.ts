@@ -6,6 +6,7 @@ import { DebtorComponent } from '../screens/debtor/debtor.component';
 import { DraftDocumentComponent } from '../screens/draf-document/draf-document.component';
 import { MyAccountComponent } from '../screens/my-account/my-account.component';
 import { LoanComponent } from '../screens/loan/loan.component';
+import { CreateLoanComponent } from '../screens/loan/pages/create_loan/create-loan/create-loan.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'loan',
-        component: LoanComponent
+        component: LoanComponent,
       },
       {
         path: 'draft-documents',
@@ -33,7 +34,11 @@ const routes: Routes = [
         path: 'my-account',
         component: MyAccountComponent,
       },
-
+      {
+        path: 'loan/personal-loan',
+        // TODO change route name
+        component: CreateLoanComponent
+      }
     ]
   },
 ];

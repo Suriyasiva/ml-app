@@ -1,5 +1,14 @@
 <div>
-  <div class="input-label">{{ label }}</div>
+  <div
+    [style.gap]="leftIcon ? '10px' : '0px'"
+    style="display: flex; justify-content: start; align-items: center"
+    class="input-label"
+  >
+    @if(leftIcon){
+    <div [innerHtml]="leftIcon" class="icon-container"></div>
+    }
+    {{ label }}
+  </div>
   <div class="input-group input-group-lg">
     <input
       [type]="type"
@@ -7,7 +16,8 @@
       class="input-field"
       aria-label="Large"
       aria-describedby="inputGroup-sizing-sm"
-      [(ngModel)]="_val"
+      [ngModel]="val"
+      (ngModelChange)="updateValue($event)"
     />
   </div>
 </div>

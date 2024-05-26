@@ -10,15 +10,20 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MlInputComponent } from '../components/ml-input/ml-input.component';
-import { MlTableComponent } from '../components/ml-table/ml-table.component';
+import { DebtorTable } from '../components/debtor-table/debtor-table.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MyAccountComponent } from '../screens/my-account/my-account.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { LoanComponent } from '../screens/loan/loan.component';
+import { LoanDetailsContainer } from '../components/loan-details-container/loan-details-container';
+import { PersonalLoanComponent } from '../screens/loan/pages/personal-loan/personal-loan.component';
+import { CreateLoanComponent } from '../screens/loan/pages/create_loan/create-loan/create-loan.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MlSelectComponent } from '../components/ml-select/ml-select.component';
+import { MlChartComponent } from '../components/ml-chart/ml-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +32,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OverviewComponent,
     DebtorComponent,
     MyAccountComponent,
+    LoanComponent,
     TopBarComponent,
-    MlTableComponent,
+    PersonalLoanComponent,
+    CreateLoanComponent,
   ],
   imports: [
     CommonModule,
@@ -40,9 +47,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MlInputComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    LoanDetailsContainer,
+    MatStepperModule,
+    // NgSelectModule,
+
+    // standalone 
+    MlSelectComponent,
+    MlInputComponent,
+    DebtorTable,
+    MlChartComponent
+
   ],
   exports: [SidebarComponent, LayoutComponent] // one component will be use in one module , if we need to use in another module we should export the component
 

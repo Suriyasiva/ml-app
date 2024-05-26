@@ -7,7 +7,23 @@
       <p>Access and oversee your profile from this section.</p>
     </div>
 
-    <div class="col-6"></div>
+    <div class="col-6">
+      <div class="d-flex align-items-end gap-2 justify-content-end">
+        <button
+          (click)="handleSubmit($event)"
+          type="button"
+          class="btn btn-light general-tab-container"
+        >
+          Save Changes
+        </button>
+        <button
+          type="button"
+          class="btn btn-light d-flex general-tab-container"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- page - content -->
@@ -114,7 +130,7 @@
           </div>
 
           <!-- profile picture handle with if condition -->
-          <form [formGroup]="profileForm" (submit)="handleSubmit($event)">
+          <form [formGroup]="profileForm">
             <ng-template [ngIf]="selectedInfo === 'basicInfo'">
               <div>
                 <div style="font-weight: 500; padding-top: 1.5rem">
@@ -204,15 +220,15 @@
                         >male</i
                       >
                       <p>Male</p>
-
                       <div class="input-group justify-content-center">
                         <div class="input-group-prepend">
                           <input
                             type="radio"
                             name="gender"
                             id="male"
-                            checked="true"
+                            (change)="updateGender($event)"
                             value="male"
+                            [checked]="getGender?.value === 'male'"
                           />
                         </div>
                       </div>
@@ -231,7 +247,9 @@
                           <input
                             name="gender"
                             id="female"
+                            (change)="updateGender($event)"
                             value="female"
+                            [checked]="getGender?.value === 'female'"
                             type="radio"
                           />
                         </div>
@@ -328,6 +346,7 @@
                   <div>
                     <div>Aadhaar</div>
                     <img
+                      style="width: 200px"
                       src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
                       class="card-img-top"
                     />
@@ -336,6 +355,7 @@
                   <div>
                     <div>Pan</div>
                     <img
+                      style="width: 200px"
                       src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
                       class="card-img-top"
                     />

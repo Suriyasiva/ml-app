@@ -1,0 +1,19 @@
+<div>
+    <div
+      style="display: flex; justify-content: start; align-items: center"
+      class="input-label"
+    >
+      {{ label }}
+    </div>
+    <div class="input-group input-group-lg">
+        <ng-select
+        placeholder="Select Input"
+        
+        (change)="handleChange($event)"
+      >
+        @for (car of cars; track car.id) {
+        <ng-option [value]="car.id">{{ car.name }}</ng-option>
+        }
+      </ng-select>
+    </div>
+  </div>

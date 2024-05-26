@@ -1,5 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-ml-input',
@@ -27,18 +28,29 @@ export class MlInputComponent implements ControlValueAccessor {
   placeholder: string = "Placeholder";
 
   @Input()
-  _val: string = "Placeholder";
+  leftIcon?: string;
+
+  @Input()
+  rightIcon?: string;
+
+  @Input()
+  editable?: string;
+
 
   onChange: any = () => { };
 
   onTouch: any = () => { };
 
+  val: any = "";
+
+  private valueChanges = new Subject();
+
+  private touches = new Subject();
+
   set value(val: any) {
-    if (val !== undefined && this._val !== val) {
-      this._val = val;
-      this.onChange(val)
-      this.onTouch(val)
-    }
+    this.val = val;
+    this.onChange(val)
+    this.onTouch(val)
   }
 
   // this method sets the value programmatically
@@ -48,11 +60,18 @@ export class MlInputComponent implements ControlValueAccessor {
 
   // upon UI element value changes, this method gets triggered
   registerOnChange(fn: (_: any) => void): void {
-    this.onChange = fn
+    this.valueChanges.subscribe(fn);
+    // this.onChange = fn
   }
 
   registerOnTouched(fn: (_: any) => void): void {
     this.onTouch = fn
+    // this.touches.next();
+  }
+
+  updateValue(_value: any) {
+    this.val = _value;
+    this.valueChanges.next(_value);
   }
 
 }

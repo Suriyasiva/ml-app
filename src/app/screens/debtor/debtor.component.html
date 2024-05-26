@@ -1,1 +1,177 @@
-<p>debtor works!</p>
+<div class="container-fluid">
+  <!-- page heading and save buttons -->
+  <div class="row">
+    <!--  page info -->
+    <div class="col-8 mt-3 px-0 page-info d-flex justify-content-between">
+      <div>
+        <h1>Debtor List</h1>
+        <p>Access and oversee your Debtor from this section.</p>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button
+          (click)="addDebtor($event)"
+          type="button"
+          class="btn btn-light general-tab-container"
+        >
+          <i class="material-icons">search</i>
+        </button>
+        <button
+          (click)="addDebtor($event)"
+          type="button"
+          class="btn btn-light general-tab-container"
+        >
+          <i class="material-icons">add</i>
+          Add Debtor
+        </button>
+      </div>
+    </div>
+
+    <div class="col-4 mt-3 d-flex justify-content-between">
+      <!-- <div class="page-info px-3">
+        <div>
+          <h1>Debtor Summary</h1>
+          <p class="text-secondary">oversee your Debtor Profile</p>
+        </div>
+      </div> -->
+      <!-- <div class="d-flex align-items-center">
+        <button
+          (click)="addDebtor($event)"
+          type="button"
+          class="btn btn-light general-tab-container"
+        >
+          <i class="material-icons">edit</i>
+          Edit Debtor
+        </button>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-8 p-0">
+      <app-ml-table (selectedDebtorProfile)="onDebtorClick($event)" />
+    </div>
+    <div class="col-4 d-flex">
+      <div class="separator-v"></div>
+
+      <div style="width: 100%" class="px-3">
+        @if (selectedDebtor) {
+
+        <div
+          style="width: 100%"
+          class="d-flex align-items-center justify-content-center flex-column"
+        >
+          <div style="position: relative">
+            <img
+              src="https://modernadmin.evolvision.com/assets/images/portrait/small/avatar-s-19.png"
+              alt="avatar"
+              class="avatar"
+            />
+            <i
+              style="
+                position: absolute;
+                bottom: 0;
+                right: -0.5rem;
+                cursor: pointer;
+                background-color: whitesmoke;
+                padding: 0.3rem;
+                border-radius: 50%;
+                font-size: 23px;
+              "
+              class="material-icons"
+              >edit</i
+            >
+          </div>
+          <div class="pt-2">{{ selectedDebtor.firstName }} Banner</div>
+        </div>
+
+        <div class="mt-3">
+          <h2>Basic Details</h2>
+          <div style="height: 3rem" class="d-flex justify-content-between">
+            <div>
+              <div class="text-secondary">Gender</div>
+              <div class="pt-2 d-flex align-items-center gap-2">
+                <div>Male</div>
+                <i class="material-icons">male</i>
+              </div>
+            </div>
+            <div class="separator-v"></div>
+            <div>
+              <div class="text-secondary">DOB</div>
+              <div class="pt-2">30-11-1998</div>
+            </div>
+            <div class="separator-v"></div>
+            <div>
+              <div class="text-secondary">Age</div>
+              <div class="pt-2">25</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <h2>Contact Details</h2>
+          <div style="height: 3rem" class="d-flex justify-content-between">
+            <div>
+              <div class="text-secondary">
+                Phone Numbers
+                <span style="font-size: 12px; color: gray">(not primary)</span>
+              </div>
+              <div class="pt-2 d-flex align-items-center gap-2">
+                <div>9789412582</div>
+                ,
+                <div>9876543210</div>
+                <div style="cursor: pointer" class="badge bg-secondary">+3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <h2>Residence and Additional Details</h2>
+          <div style="height: 3rem" class="d-flex justify-content-between">
+            <div>
+              <div class="text-secondary">City</div>
+              <div class="pt-2 d-flex align-items-center gap-2">
+                <div>Chidambaram</div>
+              </div>
+            </div>
+            <div class="separator-v"></div>
+            <div>
+              <div class="text-secondary">Loans</div>
+              <div class="pt-2 d-flex align-items-center gap-2">
+                <div>3</div>
+              </div>
+            </div>
+            <div class="separator-v"></div>
+
+            <div>
+              <div class="text-secondary">Debtor Verified</div>
+              <div class="pt-2 d-flex align-items-center gap-2">
+                <div>Verified</div>
+                <i style="color: green" class="material-icons"
+                  >admin_panel_settings</i
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <div style="height: 3rem" class="d-flex justify-content-end">
+            <div
+              style="cursor: pointer"
+              class="pt-2 d-flex align-items-center gap-2"
+            >
+              <div class="text-primary view-debtor-link">View Debtor</div>
+              <i class="material-icons text-primary">arrow_right_alt</i>
+            </div>
+          </div>
+        </div>
+
+        }@else {
+        <div>loading</div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

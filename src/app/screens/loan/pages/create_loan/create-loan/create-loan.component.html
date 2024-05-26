@@ -1,0 +1,154 @@
+<div style="height: 100%" class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-3 px-0 d-flex justify-content-between">
+      <div class="page-info">
+        <h1>Loan Name</h1>
+        <p>Create (loan name)</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 100%" class="row">
+    <div style="height: 100%" class="row">
+      <div style="height: 100%" class="col-12">
+        <form style="height: 100%;" [formGroup]="personalLoanData">
+          <mat-stepper
+            style="padding: 0; margin: 0; height: 100%; overflow: scroll"
+            [selectedIndex]="selectedIndex"
+            (selectedIndexChange)="handleStepperSelect($event)"
+            linear
+            #stepper
+          >
+            <div style="height: 100%" class="create-user-container">
+              <!-- stepper 1 -->
+              <mat-step>
+                <ng-template matStepLabel>
+                  <div
+                    style="color: #4f46e5"
+                    [ngStyle]="{
+                      'font-weight': selectedIndex === 0 ? 'bold' : 'normal',
+                      'color':selectedIndex === 0 ? '#4f46e5' : 'grey',
+                    }"
+                    class="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <i class="material-icons">attach_money</i>
+                    <div>Loan Details</div>
+                  </div>
+                </ng-template>
+
+                <div class="row">
+                  <div class="col-4">
+                    <div class="mt-4">
+                      <app-ml-input
+                        placeholder="Enter Principle Amount"
+                        formControlName="loanAmount"
+                        type="number"
+                        label="Principle Amount"
+                        leftIcon='<i class="bi bi-coin"></i>'
+                      />
+                    </div>
+                    <div class="mt-4">
+                      <app-ml-input
+                        placeholder="Enter Interest"
+                        formControlName="interest"
+                        type="number"
+                        label="Interest"
+                        leftIcon='<i class="bi bi-percent"></i>'
+                      />
+                    </div>
+
+                    <div class="mt-4">
+                      <app-ml-input
+                        placeholder="Enter Loan Tenure"
+                        formControlName="loanTenure"
+                        type="number"
+                        label="Loan Tenure"
+                        leftIcon='<i class="bi bi-calendar2-week"></i>'
+                      />
+                    </div>
+                    <app-ml-select />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div style="display: flex; justify-content: flex-end">
+                      <button
+                        type="button"
+                        class="btn btn-light d-flex general-tab-container"
+                        matStepperNext
+                      >
+                        Add Debtor
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </mat-step>
+
+              <!--  stepper 2 -->
+
+              <mat-step>
+                <ng-template matStepLabel>
+                  <div
+                    style="color: #4f46e5"
+                    [ngStyle]="{
+                      'font-weight': selectedIndex === 1 ? 'bold' : 'normal',
+                      'color':selectedIndex === 1 ? '#4f46e5' : 'grey',
+                    }"
+                    class="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <i class="material-icons">account_circle</i>
+                    <div>Debtor Details</div>
+                  </div>
+                </ng-template>
+
+                <div style="display: flex; justify-content: flex-end">
+                  <button
+                    type="button"
+                    mat-raised-button
+                    color="accent"
+                    matStepperNext
+                  >
+                    Next
+                  </button>
+                </div>
+              </mat-step>
+
+              <!--  stepper 3 -->
+
+              <mat-step>
+                <ng-template matStepLabel>
+                  <div
+                    style="color: #4f46e5"
+                    [ngStyle]="{
+                      'font-weight': selectedIndex === 2 ? 'bold' : 'normal',
+                      'color':selectedIndex === 2 ? '#4f46e5' : 'grey',
+                    }"
+                    class="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <i class="material-icons">view_list</i>
+                    <div>Loan Records</div>
+                  </div>
+                </ng-template>
+
+                <p>You are now done.</p>
+                <div style="display: flex; justify-content: flex-end">
+                  <button
+                    style="margin-right: 10px"
+                    mat-raised-button
+                    color="warn"
+                    matStepperPrevious
+                  >
+                    Back
+                  </button>
+                  <!-- <button mat-raised-button color="accent" type="submit">Submit</button> -->
+                  <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+                </div>
+              </mat-step>
+            </div>
+          </mat-stepper>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

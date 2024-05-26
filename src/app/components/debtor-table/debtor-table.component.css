@@ -1,0 +1,83 @@
+table {
+  width: 80% !important;
+}
+
+.mat-mdc-form-field {
+  font-size: 30px;
+  width: 50%;
+}
+
+td,
+th {
+  width: 150px !important;
+}
+
+th {
+  background-color: #a5b4fc39 !important;
+  border-bottom: 0px solid transparent !important;
+  color: #4f46e5 !important;
+  font-weight: 500 !important;
+}
+
+th:first-child {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+th:last-child {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.mat-mdc-cell {
+  border-bottom: 1px solid #a7a7a759 !important;
+}
+
+.avatar {
+  position: relative;
+  bottom: 2px;
+  display: inline-block;
+  width: 3.5rem;
+  white-space: nowrap;
+  border-radius: 1000px;
+  vertical-align: bottom;
+}
+
+.table-row {
+  height: 50px;
+  font-weight: 500;
+  margin: 1rem 0 1rem 0 !important;
+}
+
+.active-status {
+  color: green;
+  width: 5rem;
+  background-color: rgba(144, 251, 144, 0.189);
+  padding: 5px 20px 5px 15px;
+  border-radius: 10px;
+}
+
+.inactive-status {
+  color: white;
+  width: 5rem;
+  background-color: rgba(255, 151, 151, 0.157);
+  color: red;
+  padding: 5px 15px 5px 15px;
+  border-radius: 10px;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke !important;
+  cursor: pointer !important;
+}
+
+td {
+  cursor: pointer !important;
+}
+
+.selectedDebtor {
+  color: #4f46e5 !important;
+  font-weight: 500;
+}
+
+

@@ -4,21 +4,24 @@ import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-my-account',
-  templateUrl: './my-account.component.html',
+  // templateUrl: './my-account.component.html',
+  template: '<div>my account works!</div>',
   styleUrl: './my-account.component.css',
 })
 export class MyAccountComponent {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
 
-  selectedInfo: string = 'identity';
+  }
+
+  selectedInfo: string = 'basicInfo';
 
   profileForm = this.formBuilder.group({
-    firstName: ['Suriya', Validators.required],
-    lastName: ['S', Validators.required],
-    email: ['ssuriya3098@gmail.com', Validators.required],
-    gender: ['', Validators.required],
-    dob: ["2018-07-22", Validators.required],
+    firstName: ['Suriya'],
+    lastName: ['S'],
+    email: ['ssuriya3098@gmail.com'],
+    gender: ["male"],
+    dob: ["2018-07-22"],
     userProfileId: [''],
     phoneNumber: this.formBuilder.array([
       this.formBuilder.group({
@@ -26,14 +29,14 @@ export class MyAccountComponent {
         phoneNumber: ['9789412582']
       }),
     ]),
-    aadhaarNumber: ['123 123 123 123', Validators.required],
-    panNumber: ['asd123qw', Validators.required],
-    addressLine1: ['1st asd, asd', Validators.required],
+    aadhaarNumber: ['123 123 123 123'],
+    panNumber: ['asd123qw'],
+    addressLine1: ['1st asd, asd'],
     addressLine2: [''],
-    city: ['marina', Validators.required],
-    district: ['Chennai', Validators.required],
-    state: ['Tamil Nadu', Validators.required],
-    pincode: ['600001', Validators.required],
+    city: ['marina'],
+    district: ['Chennai'],
+    state: ['Tamil Nadu'],
+    pincode: ['600001'],
     aadhaarFileId: [''],
     panFileId: ['']
   });
@@ -43,11 +46,13 @@ export class MyAccountComponent {
   };
 
   addUserPhoneNumber() {
-    const suretyFormGroup = this.formBuilder.group({
+    const phoneNumberControl = this.formBuilder.group({
       isPrimary: [false],
       phoneNumber: ['']
     });
-    this.userPhoneNumbers.push(suretyFormGroup);
+
+    let dep = this.profileForm.get('phoneNumber') as FormArray;
+    dep.push(phoneNumberControl);
   };
 
   removeUserPhoneNumber(event: any, index: number) {
@@ -58,8 +63,17 @@ export class MyAccountComponent {
     this.selectedInfo = selectedItem
   };
 
-  handleSubmit(value: any) {
-    console.log('this.form :>> ', this.profileForm);
+  handleSubmit(event: any) {
+    console.log('this.form :>> ', this.profileForm.value);
   }
+
+  updateGender(selectedGender: any) {
+    this.profileForm.patchValue({ gender: selectedGender.target.value });
+  };
+
+  get getGender() {
+    return this.profileForm.get("gender");
+  }
+
 
 };

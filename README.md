@@ -47,3 +47,16 @@ https://ritchiejacobs.be/angular-custom-form-component
 
 https://stackoverflow.com/questions/53099559/passing-a-formcontrol-to-a-child-component-no-value-accessor-for-form-control
 
+
+https://stackblitz.com/edit/angular-cva?file=src%2Fapp%2Fapp.component.html
+
+https://stackblitz.com/edit/angular-control-value-accessor-forms-example?file=src%2Fapp%2Fcustom-input%2Fcustom-input.component.ts
+
+https://stackblitz.com/run?file=src%2Fexample%2Ftable-overview-example.html
+
+
+loan
+
+https://dribbble.com/shots/16915012-Loan-Calculator-For-HNB -loan edit
+
+https://dribbble.com/shots/19951227-Mortgage-Loan-Calculator-Amortization-Forecast-Chart-UI-Design

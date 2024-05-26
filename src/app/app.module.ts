@@ -9,7 +9,7 @@ import { LayoutModule } from './layout/layout.module';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     NgbModule,
     MatIconModule,
+    HttpClientModule,
+    
   ], // packages, inbuilt modules
   providers: [
     provideAnimationsAsync()

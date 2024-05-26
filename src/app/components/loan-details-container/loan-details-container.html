@@ -1,0 +1,40 @@
+<div
+  class="card shadow-sm"
+  style="width: 18rem; border: 1px solid #a5b4fc39; cursor: pointer"
+  (click)="onCardClick(financeData)"
+>
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h2 class="card-title app-heading-color">{{financeData.loanName}}</h2>
+
+      @if(financeData.loanName!=="Personal Loan"){
+      <i style="color: goldenrod" class="material-icons">workspace_premium</i>
+      }@else {
+      <i style="color: green" class="material-icons">workspace_premium</i>
+      }
+    </div>
+    <p style="color: gray" class="card-text financeDescription">
+      {{financeData.loanDescription}}
+    </p>
+    <div class="d-flex justify-content-end align-items-center">
+      <!-- @if(financeData.loanName==="Personal Loan"){
+      <div style="position: relative" class="d-flex justify-content-center">
+        @for (avatar of avatarGroup; track financeData.loanName; let idx =
+        $index) {
+        <div
+          [style.background-color]="backgroundColors[idx]"
+          class="avatar rounded-circle"
+        >
+          {{avatar}}
+        </div>
+        }
+        <div>+3</div>
+      </div>
+      } -->
+
+      <i style="color: gray" class="material-icons"
+        >keyboard_double_arrow_right</i
+      >
+    </div>
+  </div>
+</div>

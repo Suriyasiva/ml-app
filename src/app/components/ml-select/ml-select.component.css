@@ -1,0 +1,62 @@
+::ng-deep.ng-select-container {
+  height: 3rem !important;
+  border-radius: 20px !important;
+  padding-left: 15px !important;
+  letter-spacing: 1px !important;
+  width: 330px !important;
+  background-color: #dedede50 !important;
+  border: 1px solid #dedede !important;
+  border-radius: 10px !important;
+}
+
+::ng-deep.ng-select-container .ng-placeholder {
+  padding-top: 5px !important;
+  color: #a7a7a7 !important;
+  font-size: 18px !important;
+  font-weight: 370 !important;
+}
+
+::ng-deep .ng-value-container .ng-input input {
+  padding: 10px !important;
+  font-size: 18px !important;
+  font-weight: 370 !important;
+  color: black !important;
+  letter-spacing: 1px !important;
+}
+
+::ng-deep.ng-select-container:hover {
+  border-color: #111827 !important;
+}
+
+::ng-deep .ng-dropdown-panel-items .ng-option {
+  color: #4f46e5 !important;
+  height: 2.5rem !important;
+  font-size: 18px !important;
+  font-weight: 370 !important;
+}
+
+::ng-deep .ng-dropdown-panel-items .ng-option:hover {
+  color: #4f46e5 !important;
+  background-color: #a5b4fc39;
+}
+
+::ng-deep .ng-dropdown-panel {
+  width: 330px !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  background-color: #fff !important;
+  border: 1px solid #dedede !important;
+}
+
+::ng-deep .ng-star-inserted {
+  letter-spacing: 1px !important;
+  font-size: 18px !important;
+  font-weight: 370 !important;
+}
+
+.input-label {
+  padding-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111827;
+}

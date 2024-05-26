@@ -1,0 +1,59 @@
+.page-info > h1 {
+  margin-bottom: 0 !important;
+  font-weight: 500;
+}
+
+.page-info > p {
+  color: #a7a7a7;
+  font-weight: 500;
+  font-size: 0.725rem;
+}
+
+.form-label-icon {
+  font-size: 10px !important;
+}
+
+.btn:hover {
+  border: 1px solid #4f46e5;
+}
+
+.btn {
+  background-color: #a5b4fc39;
+  color: #4f46e5;
+}
+
+.btn:focus {
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+  background-color: #a5b4fc39;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+  display: none !important;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  overflow: visible !important;
+  /* height: 100% !important; */
+}
+
+mat-stepper,
+::ng-deep .mat-horizontal-stepper-content {
+  /* overflow-y: visible !important; */
+  height: 100% !important;
+}
+
+/* ::ng-deep .mat-step-header[aria-selected="true"] {
+  background-color: #a5b4fc39;
+  font-weight: 10px;
+
+  & div.mat-step-label.mat-step-label-active.mat-step-label-selected {
+    color: #fff;
+  }
+} */
+
+/*
+mat-stepper {
+  display: flex;
+  flex-direction: column; 
+} */

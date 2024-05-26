@@ -1,0 +1,8 @@
+common thing 
+-loan amount
+-rate of interest
+-loan tenure
+
+compound frequency for compound interest
+
+EMI, CAR LOAN, HOME LOAN, SIMPLE INTEREST, COMPOUND INTEREST

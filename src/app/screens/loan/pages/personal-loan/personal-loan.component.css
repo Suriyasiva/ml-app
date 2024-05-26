@@ -9,8 +9,6 @@
   font-size: 0.725rem;
 }
 
-.free-sort{
-  display: flex;
-  align-items: end;
- 
+.form-label-icon {
+  font-size: 10px !important;
 }
